@@ -42,7 +42,7 @@ module.exports = {
 		}
 	},
 	plugins: [
-		new CommonsChunkPlugin('common.js'),
+		new CommonsChunkPlugin('common'),
 		//      new uglifyJsPlugin({   // 压缩
 		//          compress: {
 		//              warnings: false
