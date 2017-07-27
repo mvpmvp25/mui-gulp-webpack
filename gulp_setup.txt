@@ -1,0 +1,43 @@
+
+Windows需安装Ruby和devkit(http://code.taobao.org/svn/rely/gulp有存放)
+Ruby安装选择“Add Ruby executables to your PATH”
+devkit解压到指定的文件夹，然后打开命令行，进入devkit的解压目录执行ruby dk.rb init命令初始化创建config.yml文件，在config.yml文件的最后一行加上Ruby的安装目录如：- D:\pro\Ruby23-x64
+然后在命令行中进入Ruby的安装目录，执行gem install sass命令安装Sass
+安装教程 http://jingyan.baidu.com/article/48b558e33558ac7f38c09aee.html
+Ruby、devkit下载 http://rubyinstaller.org/downloads/
+
+全局安装Python(http://code.taobao.org/svn/rely/gulp有存放)
+
+安装gulp(第一次需全局安装)
+npm install gulp -g
+
+给项目目录安装插件
+npm install del gulp-cached gulp-uglify gulp-rename gulp-concat gulp-notify gulp-filter gulp-ruby-sass gulp-rev-append gulp-cssnano gulp-replace gulp-imagemin gulp-font-spider gulp-file-include gulp-autoprefixer webpack gulp-util fs gulp-ssh
+npm install jshint gulp-jshint
+
+***************************** npm常用命令 *********************************
+
+npm install xxx 安装模块
+
+npm install xxx -g 将模块安装到全局环境中 参考http://goddyzhao.tumblr.com/post/9835631010/no-direct-command-for-local-installed-command-line-modul
+
+npm ls 查看安装的模块及依赖
+
+npm ls -g 查看全局安装的模块及依赖
+
+npm uninstall xxx  (-g) 卸载模块
+
+npm cache clean 清理缓存
+
+***************************** 获取发布所需的服务器公钥id_rsa *********************************
+
+[jst@jst-test-app ~]$ ssh-keygen   // 输入ssh-keygen
+Generating public/private rsa key pair.  // 回车或默认跳过
+Enter file in which to save the key (/home/jst/.ssh/id_rsa): // 回车或默认跳过
+/home/jst/.ssh/id_rsa already exists. // 回车或默认跳过
+Overwrite (y/n)? // 回车或默认跳过
+[jst@jst-test-app ~]$ cd .ssh/     // 输入cd .ssh/
+[jst@jst-test-app .ssh]$ ls        // 输入ls
+id_rsa  id_rsa.pub  known_hosts    // 回车或默认跳过 这步完成后可以输入pwd查看当前目录的路径
+[jst@jst-test-app .ssh]$ cp id_rsa /home/jst/      // 输入cp id_rsa /home/jst/ 将id_rsa拷贝到/home/jst/下，再用SFTP等工具下载
+[jst@jst-test-app .ssh]$ 

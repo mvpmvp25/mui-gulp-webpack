@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>确定支付-收银台</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link type="text/css" href="../css/pay.css?rev=@@hash" rel="stylesheet" />
+	</head>
+
+	<body>
+
+		<div class="pay-flex-box">
+
+			<section class="pay-flex-item">
+				<div class="pay-cell">
+
+					<div class="pay-shop-logo"><img class="scan-banner" src="../img/icon/shop_logo.png" /></div>
+					<h3 id="payShopName" class="pay-shop-name"></h3>
+					<p class="pay-shop-id">商户号：<span id="payShopId"></san></p>
+				    <div class="pay-trade-box">
+				    	<p class="pay-trade-input"><input id="tradeAmount" class="trade-amount" type="number" value="" /></p>
+				    	<p class="pay-trade-unit">元</p>
+				    </div>
+					<div id="tradeBtn" class="trade-btn disabled">确认支付</div>
+					
+		        </div>
+			</section>
+			
+	       <section class="pay-flex-item pay-adv">
+	       	    <section class="pay-provider">本服务由捷顺金科提供</section>
+	       </section>
+	       
+        </div>
+       
+       
+       
+		
+		
+		<script type="text/javascript" src="../js/vendors/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js?rev=@@hash"></script>
+		<script type="text/javascript" src="../js/pay_test.js?rev=@@hash"></script>
+		
+	</body>
+
+</html>

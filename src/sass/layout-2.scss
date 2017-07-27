@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+@import './base/common';
+
+// flex上下结构
+.flex-box {
+    @extend %box;
+    min-height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    .flex-item {
+        @extend %son-box;
+    }
+    .flex-full{
+        flex: 1;
+    }
+}

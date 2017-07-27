@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+@import './base/common';
+
+// 单个icon
+.fui-icon {
+    position: relative;
+    @extend %square20;
+    &:after {
+        content: "";
+        width: $length1 * 20;
+        height: $length1 * 20;
+        display: inline-block;
+        background: url("../img/icon/icon_mobile.png") no-repeat center center;
+        background-size: 100% 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+}
+
+// 列表样式
+.fui-list-box {
+    @extend %box;
+    background: #F0FBD5;
+    ul {
+        @extend %son-box;
+        li {
+            width: $mainwidth;
+            height: $length1 * 40;
+            overflow: hidden;
+            line-height: $length1 * 40;
+            margin: 0 auto;
+            border-bottom: 1px solid $linecolor;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            &:last-child {
+                border: 0;
+            }
+            // 左图标
+            .fui-left-icon {
+                position: relative;
+                padding-left: $length1 * 24;
+                @extend %square20;
+                &:after {
+                    content: "";
+                    @include leftIconMobile;
+                }
+            }
+            // 右图标
+            .fui-right-icon {
+                position: relative;
+                padding-right: $length1 * 24;
+                @extend %square20;
+                &:after {
+                    content: "";
+                    @include rightIconMobile;
+                }
+            }
+            // 左标签
+            .fui-left-mark {
+                position: relative;
+                padding-left: $length1 * 36;
+                @extend %square20;
+                &:after {
+                    content: "成功";
+                    @include leftTag;
+                }
+            }
+            // 右标签
+            .fui-right-mark {
+                position: relative;
+                padding-right: $length1 * 36;
+                @extend %square20;
+                &:after {
+                    content: "代扣";
+                    @include rightTag;
+                }
+            }
+        }
+    }
+}
+
+// 列表样式
+.fui-list-cell {
+    @extend %box;
+    background: #F0FBD5;
+    ul {
+        @extend %son-box;
+        li {
+            @extend %son-box;
+            height: $length1 * 40;
+            line-height: $length1 * 40;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            &:after {
+                content: "";
+                width: $mainwidth;
+                display: block;
+                border-top: 1px solid $linecolor;
+                position: absolute;
+                left: $gapwidth;
+                bottom: 0;
+            }
+            &:last-child:after {
+                content: "";
+                border: 0;
+            }
+            .left-cell {
+                margin-left: $gapwidth;
+            }
+            .right-cell {
+                margin-right: $gapwidth;
+            }
+            // 左图标
+            .fui-left-icon {
+                position: relative;
+                padding-left: $length1 * 24;
+                @extend %square20;
+                &:after {
+                    content: "";
+                    @include leftIconMobile;
+                }
+            }
+            // 右图标
+            .fui-right-icon {
+                position: relative;
+                padding-right: $length1 * 24;
+                @extend %square20;
+                &:after {
+                    content: "";
+                    @include rightIconMobile;
+                }
+            }
+            // 左标签
+            .fui-left-mark {
+                position: relative;
+                padding-left: $length1 * 36;
+                @extend %square20;
+                &:after {
+                    content: "成功";
+                    @include leftTag;
+                }
+            }
+            // 右标签
+            .fui-right-mark {
+                position: relative;
+                padding-right: $length1 * 36;
+                @extend %square20;
+                &:after {
+                    content: "代扣";
+                    @include rightTag;
+                }
+            }
+        }
+    }
+}

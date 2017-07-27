@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+@import './base/common';
+@import './module/fui-mui-paydesk';
+@import './module/fui-mui-popup';
+
+body {
+    background: #f1f1f1;
+}
+
+.pay-flex-box {
+    @extend %box;
+    min-height: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    .pay-flex-item {
+        @extend %son-box;
+    }
+    .pay-adv {
+        flex: 1;
+        position: relative;
+        .pay-provider {
+            @extend %son-box;
+            text-align: center;
+            font-size: $length1 * 11;
+            color: #c8c8c8;
+            position: absolute;
+            left: 0;
+            bottom: $length1 * 26;
+        }
+    }
+}
+
+.pay-cell {
+    width: 90.625%;
+    margin: $length1 * 37 auto 0;
+    background: $colorfff;
+    padding-bottom: $length1 * 28;
+    .pay-shop-logo {
+        width: 100%;
+        height: $length1 * 50;
+        img {
+            width: auto;
+            height: $length1 * 50;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            top: - $length1 * 25;
+        }
+    }
+    .pay-shop-name {
+        @extend %son-box;
+        font-size: $length1 * 16;
+        color: $color333;
+        text-align: center;
+        position: relative;
+        top: - $length1 * 15;
+    }
+    .pay-shop-id {
+        @extend %son-box;
+        font-size: $length1 * 9;
+        color: #878787;
+        text-align: center;
+        position: relative;
+        top: - $length1 * 15;
+    }
+    .pay-trade-box {
+        width: $length1 * 260;
+        height: $length1 * 60;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
+        border-bottom: 1px solid $linecolor;
+        padding-bottom: $length1 * 7;
+        position: relative;
+        top: - $length1 * 10;
+        .pay-trade-input {
+            flex: 1 1 $length1 * 235;
+            height: $length1 * 30;
+            input {
+                width: 84.5%;
+                height: $length1 * 30;
+                line-height: $length1 * 30;
+                font-size: $length1 * 26;
+                font-weight: bold;
+                color: $color333;
+                text-align: center;
+                padding-left: 15.5%;
+            }
+        }
+        .pay-trade-unit {
+            flex: 1 1 $length1 * 25;
+            height: $length1 * 20;
+            line-height: $length1 * 20;
+            font-size: $length1 * 14;
+            color: #878787;
+            text-align: right;
+        }
+    }
+    .trade-btn {
+        margin-top: $length1 * 20;
+        @extend %btn;
+    }
+    .disabled {
+        opacity: 0.5;
+    }
+}
+

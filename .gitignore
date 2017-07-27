@@ -1,0 +1,6 @@
+# project files
+dist/
+node_modules/
+.sass-cache/
+.project
+

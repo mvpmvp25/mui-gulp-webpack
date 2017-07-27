@@ -1,0 +1,61 @@
+@charset "utf-8";
+
+@import './base/common';
+
+$color333: #333333;
+
+// 上下图文
+.it-box {
+    width: 100%;
+    max-width: $maxwidth;
+    margin: 0 auto;
+    overflow: hidden;
+    .it-cell {
+        width: 81.25%; // *
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .it-area {
+        width: 78.125%; // *
+        margin: 0 auto;
+        overflow: hidden;
+    }
+}
+
+.it-icon{
+    width: $length1 * 30; // *
+    height: $length1 * 30;// *
+    margin: $length1 * 30 auto 0;// *
+    background: url("../img/icon/icon_mobile.png") no-repeat;// *
+    background-size: 100%;
+}
+.it-title{
+    width: 100%;
+    height: $length1 * 28;
+    line-height: $length1 * 28;
+    font-size: $length1 * 12; // *
+    font-weight: bold; // *
+    color: $color333; 
+    text-align: center;
+    margin-top: $length1 * 6; // *
+}
+.it-content{
+    line-height: $length1 * 18; 
+    font-size: $length1 * 11; // *
+    color: #757575; // *
+    margin-top: $length1 * 5 !important; // *
+    padding-bottom: $length1 * 26; // *
+}
+.it-btn {
+    margin-top: $length1 * 160 !important;
+    margin-bottom: $length1 * 30 !important;
+    background-color: #F75E1F;
+    color: $colorfff;
+    line-height: $length1 * 36;
+    text-align: center;
+    border-radius: $length1 * 4;
+    font-size: $length1 * 16;
+}
+.it-btn.disabled {
+    opacity: 0.5;
+}

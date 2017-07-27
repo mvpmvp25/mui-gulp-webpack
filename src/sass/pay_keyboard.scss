@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+@import './base/common';
+@import './module/fui-mui-popup';
+
+.pay-kb-title {
+    @extend %box;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+    .pay-kb-card {
+        height: 0.7rem;
+        line-height: 0.7rem;
+        font-size: 0.7rem;
+        text-align: center;
+        color: #333;
+    }
+}
+.writearea {
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    padding-bottom: 1.6rem;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    ul {
+        width: 60%;
+        margin: auto;
+        overflow: hidden;
+        text-align: center;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+        li {
+            width: 16%;
+            height: 2.3rem;
+            display: inline-block;
+            background: #fff;
+            i {
+                width: 0.5rem;
+                height: 0.5rem;
+                display: block;
+                border: 1px solid #999;
+                background-color: #fff;
+                border-radius: 0.5rem;
+                margin: 0.9rem auto auto;
+            }
+        }
+    }
+}
+
+.keybarea {
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+    margin: auto;
+    .paykb-num-cell {
+        width: 12rem;
+        margin: auto;
+        .keyb_inp {
+            width: 3.2rem;
+            height: 3.2rem;
+            color: #000;
+            font-size: 1.2rem;
+            background: #fff;
+            outline: none;
+            border: 0;
+            border-radius: 5rem;
+            -webkit-appearance: none;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+            font-family: "Microsoft YaHei";
+        }
+        .column {
+            margin-left: 1.2rem;
+        }
+        input.tbg_grey {
+            background: #ebe9ea;
+        }
+        input.keyb_del {
+            background: #fff url("../img/icon/keyb_del.png") no-repeat center center;
+            background-size: 40% auto;
+        }
+        input.tbg_del {
+            background: #ebe9ea url("../img/icon/keyb_del.png") no-repeat center center;
+            background-size: 40% auto;
+        }
+    }
+
+}
