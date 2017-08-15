@@ -1,5 +1,5 @@
 {
-  "name": "vue-gulp-webpack",
+  "name": "mui-gulp-webpack",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mvpmvp25/vue-gulp-webpack.git"
+    "url": "git+https://github.com/mvpmvp25/mui-gulp-webpack.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mvpmvp25/vue-gulp-webpack/issues"
+    "url": "https://github.com/mvpmvp25/mui-gulp-webpack/issues"
   },
-  "homepage": "https://github.com/mvpmvp25/vue-gulp-webpack#readme",
+  "homepage": "https://github.com/mvpmvp25/mui-gulp-webpack#readme",
   "dependencies": {
     "del": "^3.0.0",
     "fs": "0.0.1-security",

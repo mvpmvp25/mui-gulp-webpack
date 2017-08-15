@@ -22,20 +22,20 @@
     z-index: 9991;
     .popup-title {
         width: 100%;
-        height: $length1 * 50;
-        line-height: $length1 * 50;
+        height: $px * 50;
+        line-height: $px * 50;
         background: #F5F5F5;
-        color: $color333;
+        color: $dark;
         text-align: center;
-        font-size: $length1 * 16;
+        font-size: $px * 16;
         position: relative;
         .popup-close {
             content: "";
-            width: $length1 * 50;
-            height: $length1 * 50;
+            width: $px * 50;
+            height: $px * 50;
             display: block;
-            background: url("../img/icon/icon_return.png") no-repeat $length1 * 10 $length1 * 15;
-            background-size: $length1 * 12 $length1 * 20;
+            background: url("../img/icon/icon_return.png") no-repeat $px * 10 $px * 15;
+            background-size: $px * 12 $px * 20;
             position: absolute;
             left: 0;
             top: 0;
@@ -49,60 +49,60 @@
     .popup-list {
         width: 100%;
         overflow: hidden;
-        background: $colorfff;
+        background: $white;
         .popup-list-item {
             width: 87.5%;
             margin: 0 auto;
-            border-bottom: $length1 solid #d9d9d9;
+            border-bottom: $px solid #d9d9d9;
             text-align: center;
             .popup-list-logo {
-                width: $length1 * 25;
-                height: $length1 * 25;
+                width: $px * 25;
+                height: $px * 25;
                 display: inline-block;
                 vertical-align: middle;
                 img {
-                    width: $length1 * 25;
-                    height: $length1 * 25;
+                    width: $px * 25;
+                    height: $px * 25;
                     display: block;
                 }
             }
             .popup-list-text {
-                font-size: $length1 * 13;
-                color: $color333;
+                font-size: $px * 13;
+                color: $dark;
                 vertical-align: middle;
-                margin-left: $length1 * 5;
+                margin-left: $px * 5;
             }
         }
         .popup-list-add {
             width: 87.5%;
             margin: 0 auto;
-            background: $colorfff;
+            background: $white;
             text-align: center;
             .popup-add-logo {
-                width: $length1 * 25;
-                height: $length1 * 25;
+                width: $px * 25;
+                height: $px * 25;
                 display: inline-block;
                 vertical-align: middle;
                 img {
-                    width: $length1 * 25;
-                    height: $length1 * 25;
+                    width: $px * 25;
+                    height: $px * 25;
                     display: block;
                 }
             }
             .popup-add-text {
-                font-size: $length1 * 13;
-                color: $color333;
+                font-size: $px * 13;
+                color: $dark;
                 vertical-align: middle;
-                margin-left: $length1 * 5;
+                margin-left: $px * 5;
             }
             .popup-add-icon {
-                width: $length1 * 7;
-                height: $length1 * 50;
+                width: $px * 7;
+                height: $px * 50;
                 display: inline-block;
                 vertical-align: middle;
                 background: url("../img/icon/icon_right.png") no-repeat center center;
-                background-size: $length1 * 7 $length1 * 13;
-                margin-left: $length1 * 75;
+                background-size: $px * 7 $px * 13;
+                margin-left: $px * 75;
             }
         }
     }

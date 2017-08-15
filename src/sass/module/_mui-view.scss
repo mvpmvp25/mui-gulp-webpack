@@ -1,9 +1,6 @@
 @charset "utf-8";
 
 // 页面样式
-body {
-    margin: 0;
-}
 .mui-pull-left {
     float: left;
 }
@@ -13,7 +10,7 @@ body {
 
 .mui-icon {
     font-family: Muiicons;
-    font-size: 24px;
+    font-size: $px * 24;
     font-weight: 400;
     font-style: normal;
     line-height: 1;
@@ -45,7 +42,7 @@ body {
     background-color: #efeff4;
 }
 .mui-pages {
-    top: 46px;
+    top: $px * 46;
     height: auto;
 }
 .mui-scroll,
@@ -65,7 +62,7 @@ body {
     right: 0;
     left: 0;
     z-index: 10;
-    height: 44px;
+    height: $px * 44;
     background-color: #f7f7f8;
 }
 .mui-navbar .mui-bar {
@@ -73,12 +70,12 @@ body {
     z-index: 10;
     right: 0;
     left: 0;
-    height: 44px;
-    padding-right: 10px;
-    padding-left: 10px;
+    height: $px * 44;
+    padding-right: $px * 10;
+    padding-left: $px * 10;
     border-bottom: 0;
     background: #f7f7f7;
-    box-shadow: 0 0 1px rgba(0,0,0,.85);
+    box-shadow: 0 0 $px * 1 rgba(0,0,0,.85);
     text-align: center;
     backface-visibility: hidden;
 }
@@ -95,13 +92,13 @@ body {
 .mui-navbar .mui-bar .mui-title {
     display: inline-block;
     width: auto;
-    font-size: 18px;
+    font-size: $px * 18;
 }
 .mui-page-shadow {
     position: absolute;
     right: 100%;
     top: 0;
-    width: 16px;
+    width: $px * 16;
     height: 100%;
     z-index: -1;
     content: '';
@@ -122,26 +119,26 @@ body {
     display: block;
 }
 .mui-page .mui-table-view:first-child {
-    margin-top: 15px;
+    margin-top: $px * 15;
 }
 .mui-page .mui-table-view:last-child {
-    margin-bottom: 30px;
+    margin-bottom: $px * 30;
 }
 .mui-table-view {
     position: relative;
-    margin-top: 20px;
+    margin-top: $px * 20;
     margin-bottom: 0;
     padding-left: 0;
     list-style: none;
-    background: #fff;
+    background: $white;
 }
 
 .mui-table-view span.mui-pull-right {
-    color: #999;
+    color: $gray;
 }
 .mui-table-view-divider {
     background-color: #efeff4;
-    font-size: 14px;
+    font-size: $px * 14;
 }
 .mui-table-view-divider:after,
 .mui-table-view-divider:before {
@@ -154,7 +151,7 @@ body {
     bottom: 0;
     left: 0;
     z-index: 20;
-    background-color: #000;
+    background-color: $black;
 }
 .mui-icon-left-nav:before {
     background: #f00;

@@ -26,12 +26,29 @@ module.exports = (function() {
 	 * 有值返回ture，否则返回false
 	 */
 	stringModule.checkEmpty = function(str) {
-		if(str != "" && str != null && str != undefined) {
-			return true;
-		} else if(str == 0 && typeof(str) == "number") {
-			return true;
+		if(str instanceof Array) {
+			if(str.length == 0) {
+				return false;
+			} else {
+				return true;
+			}
+		} else if(str instanceof Object) {
+			if(JSON.stringify(str) == "{}") {
+				return false;
+			} else {
+				return true;
+			}
 		} else {
-			return false;
+			if(str != "" && str != null && str != undefined) {
+				return true;
+
+			} else if(str == 0 && typeof(str) == "number") {
+				return true;
+
+			} else {
+				return false;
+
+			}
 		}
 	}
 
@@ -134,12 +151,12 @@ module.exports = (function() {
 		}, options);
 
 		var returnStr = "";
-		
+
 		// 返回多个相同字符
 		String.prototype.repeat = function(n) {
 			return new Array(n + 1).join(this);
 		}
-		
+
 		if(stringModule.checkEmpty(options.targetStr)) {
 			if(options.keepStart > options.targetStr.length) {
 				//前面要保留的数量已超过最大长度
@@ -194,6 +211,16 @@ module.exports = (function() {
 			}
 		}
 		return t;
+	};
+
+    // 给指定元素的后面追加内容
+	stringModule.insertAfter = function(newElement, targetElement) { // newElement是要追加的元素 targetElement 是指定元素的位置 
+		var parent = targetElement.parentNode; // 找到指定元素的父节点 
+		if(parent.lastChild == targetElement) { // 判断指定元素的是否是节点中的最后一个位置 如果是的话就直接使用appendChild方法 
+			parent.appendChild(newElement, targetElement);
+		} else {
+			parent.insertBefore(newElement, targetElement.nextSibling);
+		}
 	};
 
 	return stringModule;

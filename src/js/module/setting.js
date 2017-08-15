@@ -9,6 +9,7 @@ module.exports = (function() {
 	// 初始化配置
 	setModule.init = function() {
 		setModule.fontSize();
+		document.body.classList.remove("none");
 	}
 
 	// 设置页面HTML的fontsize属性

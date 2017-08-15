@@ -2,7 +2,7 @@
 
 @import './base/common';
 @import './module/fui-mui-paydesk';
-@import './module/fui-mui-popup';
+@import './module/mui-popup';
 
 body {
     background: #f1f1f1;
@@ -15,91 +15,91 @@ body {
     display: flex;
     flex-direction: column;
     .pay-flex-item {
-        @extend %son-box;
+        @extend %sonBox;
     }
     .pay-adv {
         flex: 1;
         position: relative;
         .pay-provider {
-            @extend %son-box;
+            @extend %sonBox;
             text-align: center;
-            font-size: $length1 * 11;
+            font-size: $px * 11;
             color: #c8c8c8;
             position: absolute;
             left: 0;
-            bottom: $length1 * 26;
+            bottom: $px * 26;
         }
     }
 }
 
 .pay-cell {
     width: 90.625%;
-    margin: $length1 * 37 auto 0;
-    background: $colorfff;
-    padding-bottom: $length1 * 28;
+    margin: $px * 37 auto 0;
+    background: $white;
+    padding-bottom: $px * 28;
     .pay-shop-logo {
         width: 100%;
-        height: $length1 * 50;
+        height: $px * 50;
         img {
             width: auto;
-            height: $length1 * 50;
+            height: $px * 50;
             display: block;
             margin: 0 auto;
             position: relative;
-            top: - $length1 * 25;
+            top: - $px * 25;
         }
     }
     .pay-shop-name {
-        @extend %son-box;
-        font-size: $length1 * 16;
-        color: $color333;
+        @extend %sonBox;
+        font-size: $px * 16;
+        color: $dark;
         text-align: center;
         position: relative;
-        top: - $length1 * 15;
+        top: - $px * 15;
     }
     .pay-shop-id {
-        @extend %son-box;
-        font-size: $length1 * 9;
+        @extend %sonBox;
+        font-size: $px * 9;
         color: #878787;
         text-align: center;
         position: relative;
-        top: - $length1 * 15;
+        top: - $px * 15;
     }
     .pay-trade-box {
-        width: $length1 * 260;
-        height: $length1 * 60;
+        width: $px * 260;
+        height: $px * 60;
         margin: 0 auto;
         display: flex;
         align-items: flex-end;
-        border-bottom: 1px solid $linecolor;
-        padding-bottom: $length1 * 7;
+        border-bottom: 1px solid $lineColor;
+        padding-bottom: $px * 7;
         position: relative;
-        top: - $length1 * 10;
+        top: - $px * 10;
         .pay-trade-input {
-            flex: 1 1 $length1 * 235;
-            height: $length1 * 30;
+            flex: 1 1 $px * 235;
+            height: $px * 30;
             input {
                 width: 84.5%;
-                height: $length1 * 30;
-                line-height: $length1 * 30;
-                font-size: $length1 * 26;
+                height: $px * 30;
+                line-height: $px * 30;
+                font-size: $px * 26;
                 font-weight: bold;
-                color: $color333;
+                color: $dark;
                 text-align: center;
                 padding-left: 15.5%;
             }
         }
         .pay-trade-unit {
-            flex: 1 1 $length1 * 25;
-            height: $length1 * 20;
-            line-height: $length1 * 20;
-            font-size: $length1 * 14;
+            flex: 1 1 $px * 25;
+            height: $px * 20;
+            line-height: $px * 20;
+            font-size: $px * 14;
             color: #878787;
             text-align: right;
         }
     }
     .trade-btn {
-        margin-top: $length1 * 20;
+        margin-top: $px * 20;
         @extend %btn;
     }
     .disabled {

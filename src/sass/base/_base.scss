@@ -1,0 +1,168 @@
+@charset "utf-8";
+// 基础样式
+a,
+body,
+button,
+dd,
+dl,
+dt,
+em,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+li,
+p,
+textarea,
+ul {
+    font-size: $px * 12;
+    font-family: "Microsoft YaHei", "Helvetica Neue", "Helvetica", "sans-serif", "arial", "宋体";
+    font-weight: normal;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    color: $dark;
+    outline: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+button,
+input,
+textarea {
+    -webkit-appearance: none;
+}
+
+dd,
+dl,
+dt,
+li,
+ul {
+    list-style-type: none;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: $placeholderColor;
+    font-weight: normal;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: $placeholderColor;
+    font-weight: normal;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: $placeholderColor;
+    font-weight: normal;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: $placeholderColor;
+    font-weight: normal;
+}
+.none{
+    display: none;
+}
+
+//布局
+%box {
+    width: 100%;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+%sonBox {
+    width: 100%;
+    overflow: hidden;
+}
+
+%btn {
+    width: $btnWidth;
+    height: $px * 44;
+    line-height: $px * 44;
+    margin: 0 auto;
+    background: $mainColor;
+    font-size: $px * 16;
+    color: $white;
+    text-align: center;
+}
+
+%smallSquare {
+    height: 100%;
+    min-width: $px * 20;
+    min-height: $px * 20;
+    display: inline-block;
+}
+
+// 图标
+@mixin leftIconMobile {
+    width: $iconWidth;
+    height: $iconHeight;
+    display: inline-block;
+    background: url("../img/icon/icon_mobile.png") no-repeat center center;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: - $iconHeight / 2;
+}
+
+@mixin rightIconMobile {
+    width: $iconWidth;
+    height: $iconHeight;
+    display: inline-block;
+    background: url("../img/icon/icon_mobile.png") no-repeat center center;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: - $iconHeight / 2;
+}
+
+// 标签
+@mixin leftTag {
+    width: $tagWidth;
+    height: $tagHeight;
+    line-height: $tagHeight;
+    display: inline-block;
+    color: $white;
+    text-align: center;
+    background: $gray;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: - $tagHeight / 2;
+}
+
+@mixin rightTag {
+    width: $tagWidth;
+    height: $tagHeight;
+    line-height: $tagHeight;
+    display: inline-block;
+    color: $white;
+    text-align: center;
+    background: $gray;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: - $tagHeight / 2;
+}

@@ -5,11 +5,11 @@
 // 单个icon
 .fui-icon {
     position: relative;
-    @extend %square20;
+    @extend %smallSquare;
     &:after {
         content: "";
-        width: $length1 * 20;
-        height: $length1 * 20;
+        width: $px * 20;
+        height: $px * 20;
         display: inline-block;
         background: url("../img/icon/icon_mobile.png") no-repeat center center;
         background-size: 100% 100%;
@@ -24,12 +24,12 @@
     @extend %box;
     background: #F0FBD5;
     ul {
-        @extend %son-box;
+        @extend %sonBox;
         li {
-            width: $mainwidth;
-            height: $length1 * 40;
+            width: $mainWidth;
+            height: $px * 40;
             overflow: hidden;
-            line-height: $length1 * 40;
+            line-height: $px * 40;
             margin: 0 auto;
             border-bottom: 1px solid $linecolor;
             position: relative;
@@ -41,8 +41,8 @@
             // 左图标
             .fui-left-icon {
                 position: relative;
-                padding-left: $length1 * 24;
-                @extend %square20;
+                padding-left: $px * 24;
+                @extend %smallSquare;
                 &:after {
                     content: "";
                     @include leftIconMobile;
@@ -51,8 +51,8 @@
             // 右图标
             .fui-right-icon {
                 position: relative;
-                padding-right: $length1 * 24;
-                @extend %square20;
+                padding-right: $px * 24;
+                @extend %smallSquare;
                 &:after {
                     content: "";
                     @include rightIconMobile;
@@ -61,8 +61,8 @@
             // 左标签
             .fui-left-mark {
                 position: relative;
-                padding-left: $length1 * 36;
-                @extend %square20;
+                padding-left: $px * 36;
+                @extend %smallSquare;
                 &:after {
                     content: "成功";
                     @include leftTag;
@@ -71,8 +71,8 @@
             // 右标签
             .fui-right-mark {
                 position: relative;
-                padding-right: $length1 * 36;
-                @extend %square20;
+                padding-right: $px * 36;
+                @extend %smallSquare;
                 &:after {
                     content: "代扣";
                     @include rightTag;
@@ -87,21 +87,21 @@
     @extend %box;
     background: #F0FBD5;
     ul {
-        @extend %son-box;
+        @extend %sonBox;
         li {
-            @extend %son-box;
-            height: $length1 * 40;
-            line-height: $length1 * 40;
+            @extend %sonBox;
+            height: $px * 40;
+            line-height: $px * 40;
             position: relative;
             display: flex;
             justify-content: space-between;
             &:after {
                 content: "";
-                width: $mainwidth;
+                width: $mainWidth;
                 display: block;
-                border-top: 1px solid $linecolor;
+                border-top: 1px solid $lineColor;
                 position: absolute;
-                left: $gapwidth;
+                left: $gapWidth;
                 bottom: 0;
             }
             &:last-child:after {
@@ -109,16 +109,16 @@
                 border: 0;
             }
             .left-cell {
-                margin-left: $gapwidth;
+                margin-left: $gapWidth;
             }
             .right-cell {
-                margin-right: $gapwidth;
+                margin-right: $gapWidth;
             }
             // 左图标
             .fui-left-icon {
                 position: relative;
-                padding-left: $length1 * 24;
-                @extend %square20;
+                padding-left: $px * 24;
+                @extend %smallSquare;
                 &:after {
                     content: "";
                     @include leftIconMobile;
@@ -127,8 +127,8 @@
             // 右图标
             .fui-right-icon {
                 position: relative;
-                padding-right: $length1 * 24;
-                @extend %square20;
+                padding-right: $px * 24;
+                @extend %smallSquare;
                 &:after {
                     content: "";
                     @include rightIconMobile;
@@ -137,8 +137,8 @@
             // 左标签
             .fui-left-mark {
                 position: relative;
-                padding-left: $length1 * 36;
-                @extend %square20;
+                padding-left: $px * 36;
+                @extend %smallSquare;
                 &:after {
                     content: "成功";
                     @include leftTag;
@@ -147,8 +147,8 @@
             // 右标签
             .fui-right-mark {
                 position: relative;
-                padding-right: $length1 * 36;
-                @extend %square20;
+                padding-right: $px * 36;
+                @extend %smallSquare;
                 &:after {
                     content: "代扣";
                     @include rightTag;
