@@ -7,16 +7,34 @@ module.exports = (function() {
 
 	var formModule = {};
 
-	//
-	formModule.inputClear = function(params) {
-		var defaults = {
+	// input值清除
+	formModule.inputClear = function() {
+		var options = {
 			el: '.clear-input',
-			iconClassName: 'clear-icon'
+			iconClassName: 'clear-icon',
+			eyeClassName: 'eye-cion'
 		};
-		var options = strModule.extendObj(defaults, params);
+		//var options = strModule.extendObj(defaults, params);
 		var inputList = document.querySelectorAll(options.el);
 		for(var i = 0; i < inputList.length; i++) {
-			inputList[i].addEventListener("input", function() {
+			var theInput = inputList[i];
+			if(theInput.getAttribute("data-skill") == "eye") {
+				var eyeEle = document.createElement("i");
+				eyeEle.classList.add(options.eyeClassName, "close-eye");
+				eyeEle.addEventListener("touchstart", function() {
+					if(eyeEle.classList.toString().indexOf("close-eye")  > 0){
+						eyeEle.classList.remove("close-eye");
+						eyeEle.classList.add("open-eye");
+						theInput.setAttribute("type", "text");
+					}else{
+						eyeEle.classList.remove("open-eye");
+						eyeEle.classList.add("close-eye");
+						theInput.setAttribute("type", "password");
+					}
+				});
+				strModule.insertAfter(eyeEle, theInput);
+			}
+			theInput.addEventListener("input", function() {
 				var self = this;
 				var theVal = self.value;
 				var isWriting = self.classList.contains("writing");
@@ -28,12 +46,12 @@ module.exports = (function() {
 				if(theVal.length > 0) {
 					if(!isWriting) { // 插入图标节点
 						var iconEle = document.createElement("span");
-						iconEle.classList.add(defaults.iconClassName);
-						iconEle.addEventListener("click", function() {
+						iconEle.classList.add(options.iconClassName);
+						iconEle.addEventListener("touchstart", function() {
 							self.value = "";
 							self.focus();
 							iconRemove();
-						})
+						});
 						strModule.insertAfter(iconEle, self);
 						self.classList.add("writing");
 					}

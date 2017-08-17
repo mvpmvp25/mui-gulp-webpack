@@ -53,31 +53,47 @@ module.exports = (function() {
 	}
 
 	/**
-	 * 时间显示格式化
-	 * oDate为时间对象如new Date()；sFormation为格式文本如"yyyy-MM-dd"或"yyyy-MM-dd HH:mm:ss 星期w"
+	 * 对Date的扩展，将Date转化为指定格式的String
+	 * 年(y)可以用 1-4 个占位符，月(M)、日(d)、小时(h)、分(m)、秒(s)、季度(q)可以用 1-2 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
+	 * var timeA = new Date().format("yyyy-MM-dd hh:mm:ss.S") ==> 2017-07-02 08:09:04.423
+	 * var timeB = new Date().format("yyyy-M-d h:m:s.S") ==> 2017-7-2 8:9:4.18
+	 * var timeC = new Date().format("yyyyMMddhhmmss") ==> 20170816184602
 	 */
-	stringModule.formatDate = function(oDate, sFormation) {
-		var obj = {
-			yyyy: oDate.getFullYear(),
-			yy: ("" + oDate.getFullYear()).slice(-2),
-			M: oDate.getMonth() + 1,
-			MM: ("0" + (oDate.getMonth() + 1)).slice(-2),
-			d: oDate.getDate(),
-			dd: ("0" + oDate.getDate()).slice(-2),
-			H: oDate.getHours(),
-			HH: ("0" + oDate.getHours()).slice(-2),
-			h: oDate.getHours() % 12,
-			hh: ("0" + oDate.getHours() % 12).slice(-2),
-			m: oDate.getMinutes(),
-			mm: ("0" + oDate.getMinutes()).slice(-2),
-			s: oDate.getSeconds(),
-			ss: ("0" + oDate.getSeconds()).slice(-2),
-			w: ['日', '一', '二', '三', '四', '五', '六'][oDate.getDay()]
+	Date.prototype.format = function(tpl) { //author: meizz 
+		var o = {
+			"M+": this.getMonth() + 1, //月份 
+			"d+": this.getDate(), //日 
+			"h+": this.getHours(), //小时 
+			"m+": this.getMinutes(), //分 
+			"s+": this.getSeconds(), //秒 
+			"q+": Math.floor((this.getMonth() + 3) / 3), //季度 
+			"S": this.getMilliseconds() //毫秒 
 		};
-		return sFormation.replace(/([a-z]+)/ig, function($1) {
-			return obj[$1]
-		});
+		if(/(y+)/.test(tpl)) {
+			tpl = tpl.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length))
+		};
+		for(var k in o) {
+			if(new RegExp("(" + k + ")").test(tpl)) {
+				tpl = tpl.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			}
+		}
+		return tpl;
 	}
+
+	//字符串转成日期对象，dateStr格式如：20170823183943
+	stringModule.convertDate = function(dateStr) {
+		var dateDetail = dateStr.substr(4);
+		var theDate = "";
+		for(var t = 0; t < dateDetail.length / 2; t++) {
+			if(t == 0) {
+				theDate += "," + (parseInt(dateDetail.substr(t * 2, 2)) - 1).toString();
+			} else {
+				theDate += "," + dateDetail.substr(t * 2, 2);
+			}
+		}
+		theDate = "new Date(" + dateStr.substr(0, 4) + theDate + ")";
+		return eval(theDate);
+	};
 
 	/**
 	 * 返回未来或过去n年时的时间对象
@@ -213,7 +229,7 @@ module.exports = (function() {
 		return t;
 	};
 
-    // 给指定元素的后面追加内容
+	// 给指定元素的后面追加内容
 	stringModule.insertAfter = function(newElement, targetElement) { // newElement是要追加的元素 targetElement 是指定元素的位置 
 		var parent = targetElement.parentNode; // 找到指定元素的父节点 
 		if(parent.lastChild == targetElement) { // 判断指定元素的是否是节点中的最后一个位置 如果是的话就直接使用appendChild方法 

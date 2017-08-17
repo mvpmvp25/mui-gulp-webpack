@@ -1,0 +1,17 @@
+@charset "utf-8";
+@import './base/common';
+@import './base/header';
+@import './module/example/input-1';
+
+.login-box{
+    @extend %box;
+    margin-top: $px * 10;
+    background: $white;
+    .login-cell{
+        width: $mainWidth;
+        margin: 0 auto;
+        .login-input{
+            border-bottom: 1px #d9d9d9 solid;
+        }
+    }
+}

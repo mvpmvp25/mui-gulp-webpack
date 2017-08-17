@@ -78,8 +78,14 @@ textarea:-ms-input-placeholder {
     color: $placeholderColor;
     font-weight: normal;
 }
+.app-bg{
+    background: $bodyBgColor;
+}
+.no-line{
+    border: 0 !important;
+}
 .none{
-    display: none;
+    display: none !important;
 }
 
 //布局
