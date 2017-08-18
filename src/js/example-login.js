@@ -3,6 +3,9 @@ require('./module/public');
 (function($) {
 
 	var formModule = require('./module/example/form');
+	var verifyModule = require('./module/verify');
+
+	var passWordEle = $("#passWord");
 
 	var main = {
 
@@ -17,8 +20,8 @@ require('./module/public');
 		// 事件绑定
 		bindEvent: function() {
 
-			$("#btn").bind("tap", function() {
-
+			passWordEle.bind("input", function() {
+				console.log(verifyModule.check("password", this.value));
 			});
 
 		}

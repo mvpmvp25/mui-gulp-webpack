@@ -19,7 +19,7 @@
     }
 }
 
-// 列表样式
+// 列表样式-以li底边为分割线
 .fui-list-box {
     @extend %box;
     background: #F0FBD5;
@@ -31,7 +31,7 @@
             overflow: hidden;
             line-height: $px * 40;
             margin: 0 auto;
-            border-bottom: 1px solid $linecolor;
+            border-bottom: 1px solid $lineColor;
             position: relative;
             display: flex;
             justify-content: space-between;
@@ -82,7 +82,7 @@
     }
 }
 
-// 列表样式
+// 列表样式-以li伪类为分割线
 .fui-list-cell {
     @extend %box;
     background: #F0FBD5;

@@ -11,6 +11,7 @@
         line-height: $headerHeight;
         font-size: $px * 16;
         text-align: center;
+        color: $white;
     }
     .app-header-back {
         width: $px * 38;
@@ -20,6 +21,6 @@
         top: 0;
         left: 0;
         background: url($iconBack) no-repeat center center;
-        background-size: auto 40%;
+        background-size: auto 60%;
     }
 }

@@ -22,19 +22,19 @@ module.exports = (function() {
 				var eyeEle = document.createElement("i");
 				eyeEle.classList.add(options.eyeClassName, "close-eye");
 				eyeEle.addEventListener("touchstart", function() {
-					if(eyeEle.classList.toString().indexOf("close-eye")  > 0){
-						eyeEle.classList.remove("close-eye");
-						eyeEle.classList.add("open-eye");
-						theInput.setAttribute("type", "text");
+					if(this.classList.toString().indexOf("close-eye")  > 0){
+						this.classList.remove("close-eye");
+						this.classList.add("open-eye");
+						this.previousSibling.previousSibling.setAttribute("type", "text");
 					}else{
-						eyeEle.classList.remove("open-eye");
-						eyeEle.classList.add("close-eye");
-						theInput.setAttribute("type", "password");
+						this.classList.remove("open-eye");
+						this.classList.add("close-eye");
+						this.previousSibling.previousSibling.setAttribute("type", "password");
 					}
 				});
 				strModule.insertAfter(eyeEle, theInput);
 			}
-			theInput.addEventListener("input", function() {
+			theInput.addEventListener("keyup", function() {
 				var self = this;
 				var theVal = self.value;
 				var isWriting = self.classList.contains("writing");

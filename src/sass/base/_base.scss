@@ -78,16 +78,25 @@ textarea:-ms-input-placeholder {
     color: $placeholderColor;
     font-weight: normal;
 }
-.app-bg{
+
+.app-bg {
     background: $bodyBgColor;
 }
-.no-line{
+
+.no-line {
     border: 0 !important;
 }
-.none{
+
+.none {
     display: none !important;
 }
 
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
 //布局
 %box {
     width: 100%;
@@ -103,13 +112,14 @@ textarea:-ms-input-placeholder {
 
 %btn {
     width: $btnWidth;
-    height: $px * 44;
-    line-height: $px * 44;
+    height: $px * 40;
+    line-height: $px * 40;
     margin: 0 auto;
-    background: $mainColor;
+    text-align: center;
     font-size: $px * 16;
     color: $white;
-    text-align: center;
+    background: $mainColor;
+    border-radius: $px * 4;
 }
 
 %smallSquare {

@@ -13,7 +13,7 @@ require('./module/public');
 			var depict = canvas.getContext("2d");
 			var textareaEle = document.createElement("textarea");
 			var img = new Image();
-			img.src = "../img/icon/eye1.png";
+			img.src = "../img/icon/suotou.png";
 			img.onload = function() {
 				canvas.width = img.width;
 				canvas.height = img.height;
