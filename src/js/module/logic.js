@@ -9,25 +9,6 @@ module.exports = (function() {
 	var logicModule = {};
 
 	/**
-	 * 获取验证码倒计时，默认倒计时60秒
-	 * logicModule.timeDown($("#btn")[0], 5)
-	 */
-	logicModule.timeDown = function(o, s) {
-		var t = arguments[1] || arguments[1] == 0 ? arguments[1] : 60;
-		if(t == 0) {
-			o.removeAttribute("disabled");
-			o.value = "获取验证码";
-		} else {
-			o.setAttribute("disabled", true);
-			o.value = "(" + t + "秒)重新获取";
-			t--;
-			setTimeout(function() {
-				logicModule.timeDown(o, t);
-			}, 1000);
-		}
-	}
-
-	/**
 	 * 阻止浏览器默认行为
 	 */
 	logicModule.stopDefault = function(isBan) {

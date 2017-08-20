@@ -14,3 +14,5 @@ window.md5Module = require('./md5');
 window.strModule = require("./string");
 
 window.reqModule = require("./request");
+
+window.verifyModule = require('./verify');

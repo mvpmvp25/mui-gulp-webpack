@@ -10,20 +10,31 @@ module.exports = {
 	 */
 
 	check: function(rule, val) {
-		var res = false;
+		var result = {
+			res: false
+		};
+		
 		if(rule == "mobile") {
-			res = /^1[3|4|5|7|8|9]\d{9}$/.test(val);
+			result.res = /^1[3|4|5|7|8|9]\d{9}$/.test(val);
+			result.tips = "请输入正确的手机号码";
 		}
 		if(rule == "email") {
-			res = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test(val);
+			result.res = /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test(val);
+			result.tips = "请输入正确的邮箱地址";
 		}
 		if(rule == "money") {
-			res = /^(([1-9]\d{0,9})|0)(\.\d{1,2})?$/.test(val);
+			result.res = /^(([1-9]\d{0,9})|0)(\.\d{1,2})?$/.test(val);
+			result.tips = "请输入正确的金额(最多两位小数)";
 		}
 		if(rule == "password") {
-			res = /^(?![^A-Za-z]+$)(?![^0-9]+$)[\x21-\x7E]{6,20}$/.test(val);
+			result.res = /^(?![^A-Za-z]+$)(?![^0-9]+$)[\x21-\x7E]{6,20}$/.test(val);
+			result.tips = "密码不合法，6-20位的数字和字母组合";
 		}
-		return res;
+		if(rule == "checkcode") {
+			result.res = /^[0-9]{6}$/.test(val);
+			result.tips = "请输入正确的短信验证码";
+		}
+		return result;
 	},
 
 	/**

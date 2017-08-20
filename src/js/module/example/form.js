@@ -1,5 +1,5 @@
 /**
- * 字符串模块
+ * 表单模块
  * created by LittleYellow/441980627@qq.com
  */
 
@@ -10,26 +10,29 @@ module.exports = (function() {
 	// input值清除
 	formModule.inputClear = function() {
 		var options = {
-			el: '.clear-input',
+			inputClass: 'clear-input',
 			iconClassName: 'clear-icon',
 			eyeClassName: 'eye-cion'
 		};
-		//var options = strModule.extendObj(defaults, params);
-		var inputList = document.querySelectorAll(options.el);
+		var inputList = document.querySelectorAll("." + options.inputClass);
 		for(var i = 0; i < inputList.length; i++) {
 			var theInput = inputList[i];
 			if(theInput.getAttribute("data-skill") == "eye") {
 				var eyeEle = document.createElement("i");
 				eyeEle.classList.add(options.eyeClassName, "close-eye");
 				eyeEle.addEventListener("touchstart", function() {
-					if(this.classList.toString().indexOf("close-eye")  > 0){
+					var partnerInput = this.previousSibling;
+					while(partnerInput.classList.toString().indexOf(options.inputClass) == -1) {
+						partnerInput = partnerInput.previousSibling;
+					}
+					if(this.classList.toString().indexOf("close-eye") >= 0) {
 						this.classList.remove("close-eye");
 						this.classList.add("open-eye");
-						this.previousSibling.previousSibling.setAttribute("type", "text");
-					}else{
+						partnerInput.setAttribute("type", "text");
+					} else {
 						this.classList.remove("open-eye");
 						this.classList.add("close-eye");
-						this.previousSibling.previousSibling.setAttribute("type", "password");
+						partnerInput.setAttribute("type", "password");
 					}
 				});
 				strModule.insertAfter(eyeEle, theInput);

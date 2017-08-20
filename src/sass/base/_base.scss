@@ -24,6 +24,7 @@ ul {
     font-family: "Microsoft YaHei", "Helvetica Neue", "Helvetica", "sans-serif", "arial", "宋体";
     font-weight: normal;
     font-style: normal;
+    color: $dark;
     margin: 0;
     padding: 0;
     color: $dark;
@@ -79,6 +80,10 @@ textarea:-ms-input-placeholder {
     font-weight: normal;
 }
 
+input[disabled] {
+    background: $lockBgColor !important;
+}
+
 .app-bg {
     background: $bodyBgColor;
 }
@@ -91,12 +96,14 @@ textarea:-ms-input-placeholder {
     display: none !important;
 }
 
-.left{
+.left {
     float: left;
 }
-.right{
+
+.right {
     float: right;
 }
+
 //布局
 %box {
     width: 100%;

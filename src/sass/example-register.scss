@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import './base/common';
+@import './base/header';
+@import './module/example/input-1';
+.reg-box {
+    @extend %box;
+}
+
+.reg-info {
+    margin-top: $px * 10;
+    background: $white;
+    .reg-cell {
+        width: $mainWidth;
+        margin: 0 auto;
+        .reg-input {
+            border-bottom: 1px #d9d9d9 solid;
+        }
+    }
+    .reg-message {
+        position: relative;
+        .reg-input {
+            width: 65%;
+        }
+        .check-code {
+            width: 30%;
+            height: $px * 26;
+            line-height: $px * 26;
+            display: inline-block;
+            background: $mainColor;
+            border: 0;
+            border-radius: $px * 4;
+            color: $white;
+            font-size: $px * 12;
+            text-align: center;
+            position: absolute;
+            top: $px * 5;
+            right: 0;
+        }
+    }
+}
+
+.reg-btn {
+    @extend %box;
+    margin-top: $px * 15;
+    .btn {
+        @extend %btn;
+    }
+    .btn.lock {
+        background: $lockBgColor;
+    }
+}
