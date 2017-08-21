@@ -21,6 +21,7 @@ var gulp = require('gulp'), // 必须先引入gulp插件
 	imagemin = require('gulp-imagemin'), // 图片优化
 	fileinclude = require('gulp-file-include'), // 可以 include html 文件
 	autoprefixer = require('gulp-autoprefixer'), // 添加 CSS 浏览器前缀
+	inlineSource = require('gulp-inline-source'), // 将HTML文件引用的JS,CSS添加至页面
 	webpack = require('webpack'),
 	webpackConfig = require('./webpack.config.js'),
 	fs = require('fs'),
@@ -124,6 +125,9 @@ gulp.task('build', ['revcss', 'script', 'image'], function() {
 // 给编译出来的html的css/js路径加入MD5标识
 gulp.task('revhtml', ['html'], function() {
 	return gulp.src('dist/page/**/*.html')
+		.pipe(inlineSource({
+			compress: false // 已经压缩过了，不需要再次压缩
+		}))
 		.pipe(rev()) // 生成并插入 MD5
 		.pipe(gulp.dest('dist/page'))
 });

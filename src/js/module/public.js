@@ -16,3 +16,9 @@ window.strModule = require("./string");
 window.reqModule = require("./request");
 
 window.verifyModule = require('./verify');
+
+window.formModule = require('./example/form');
+
+window.sccModule = require('./plugin/send_check_code');
+
+window.popupModule = require('./plugin/popup');

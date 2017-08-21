@@ -1,7 +1,5 @@
 @charset "utf-8";
-@import './base/common';
-@import './base/header';
-@import './module/example/input-1';
+@import './base/param';
 .login-box {
     @extend %box;
 }

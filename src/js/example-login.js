@@ -2,7 +2,7 @@ require('./module/public');
 
 (function($) {
 
-	var formModule = require('./module/example/form');
+	
 
 	var passWordEle = $("#passWord");
 

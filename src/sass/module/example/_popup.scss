@@ -1,0 +1,158 @@
+@charset "utf-8";
+
+/*弹窗提示*/
+
+.popup-hide {
+    display: none;
+}
+
+.popup-mask {
+    width: 100%;
+    min-height: 100%;
+    background: #000;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9990;
+}
+
+.popup-content {
+    width: 100%;
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9991;
+}
+
+.popup-fadeIn {
+    animation: h5-fadeIn 0.2s ease both;
+    -webkit-animation: h5-fadeIn 0.2s ease both;
+    -moz-animation: h5-fadeIn 0.2s ease both;
+}
+
+@keyframes h5-fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@-webkit-keyframes h5-fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+@-moz-keyframes h5-fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.popup-fadeOut {
+    animation: h5-fadeOut 0.2s ease both;
+    -webkit-animation: h5-fadeOut 0.2s ease both;
+    -moz-animation: h5-fadeOut 0.2s ease both;
+}
+
+@keyframes h5-fadeOut {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes h5-fadeOut {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes h5-fadeOut {
+    0% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.popup-fadeInUp {
+    animation: h5-fadeInUp 0.2s ease both;
+    -webkit-animation: h5-fadeInUp 0.2s ease both;
+    -moz-animation: h5-fadeInUp 0.2s ease both;
+}
+
+@keyframes h5-fadeInUp {
+    0% {
+        transform: translateY(200px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes h5-fadeInUp {
+    0% {
+        -webkit-transform: translateY(200px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+}
+
+@-moz-keyframes h5-fadeInUp {
+    0% {
+        -moz-transform: translateY(200px);
+    }
+    100% {
+        -moz-transform: translateY(0);
+    }
+}
+
+.popup-fadeInDown {
+    animation: h5-fadeInDown 0.2s ease both;
+    -webkit-animation: h5-fadeInDown 0.2s ease both;
+    -moz-animation: h5-fadeInDown 0.2s ease both;
+}
+
+@keyframes h5-fadeInDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(200px);
+    }
+}
+
+@-webkit-keyframes h5-fadeInDown {
+    0% {
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        -webkit-transform: translateY(200px);
+    }
+}
+
+@-moz-keyframes h5-fadeInDown {
+    0% {
+        -moz-transform: translateY(0);
+    }
+    100% {
+        -moz-transform: translateY(200px);
+    }
+}

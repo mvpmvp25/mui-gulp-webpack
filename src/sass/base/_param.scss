@@ -32,3 +32,89 @@ $iconMobile: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmH
 $iconLock: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACOUlEQVRoQ+1Zi20UMRB9rgDogA4gFZC3FUAFQAUcFRAqgA6ACiAN7IQKOCqAEkIFRk/aRYvj4LHvLneLPFIURevdeW9mPL8ErFzCyvGjEzi2B7sH/gsPmNlzAE8BPAbwsEDqGsDV9POJpP5ulp1CyMzOAXxwgL4N4E8Ar0l+aWXQTMDMZPHPrYqT916S/NjyrSYCZnYfwA8A+r0PURidkZRHqqSVwAbAu6WmGOOvEMKFYpvkNodiCrnzGOMmhHAvOaP78KIKPdBWyMZxvAohPEmUyYJZ4CmoiYglBvg6DIPuVJW0euDblHFmZZckdSfcMo7jNoTwaPkCyWo81S9IoZnFBOlbkgoft5jZewCvToUASSq3u8XMRPhNJ+A22eJgJoS6B2SfY17i0/eAmalJ06WrLjYVYaqKrJZCWc3V5LnS6AReuX9frUOJkwqivFok4SWgpq2qUJUQOp67aouXQFq4HPp3PrIleVb6yikTcGWlTuBfLo4xftfztGkrhcX83FMXDumBP1NWru/xkDgaAQ03wzD8lXIz7UeRwzEJ3BhOOoFb/HWQOxBj7B7wdqfdA7nQXH0IAbgm+WBJblVZaAL+bN55mtmNRVixCDgntIPcgQW4eWlb3YrnimGOtItAbgnlseCOZ1zLMheBPW+ivbxcc7aLgDQqjmOMF5mlrBeQ69y0JN541+1uAhMJNWj6L0z1EtaBXvOvZmFNYsVZeP5eFQEHiDs/0gncuckThd0D3QM7WmD1IfQbbvgzQMVetEcAAAAASUVORK5CYII=";
 // mui-popup模块
 $muiPopupBtnText: #028bff;
+
+//布局
+%box {
+    width: 100%;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+%sonBox {
+    width: 100%;
+    overflow: hidden;
+}
+
+%btn {
+    width: $btnWidth;
+    height: $px * 40;
+    line-height: $px * 40;
+    margin: 0 auto;
+    text-align: center;
+    font-size: $px * 16;
+    color: $white;
+    background: $mainColor;
+    border-radius: $px * 4;
+}
+
+%smallSquare {
+    height: 100%;
+    min-width: $px * 20;
+    min-height: $px * 20;
+    display: inline-block;
+}
+
+// 图标
+@mixin leftIconMobile {
+    width: $iconWidth;
+    height: $iconHeight;
+    display: inline-block;
+    background: url("../img/icon/icon_mobile.png") no-repeat center center;
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: - $iconHeight / 2;
+}
+
+@mixin rightIconMobile {
+    width: $iconWidth;
+    height: $iconHeight;
+    display: inline-block;
+    background: url("../img/icon/icon_mobile.png") no-repeat center center;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: - $iconHeight / 2;
+}
+
+// 标签
+@mixin leftTag {
+    width: $tagWidth;
+    height: $tagHeight;
+    line-height: $tagHeight;
+    display: inline-block;
+    color: $white;
+    text-align: center;
+    background: $gray;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: - $tagHeight / 2;
+}
+
+@mixin rightTag {
+    width: $tagWidth;
+    height: $tagHeight;
+    line-height: $tagHeight;
+    display: inline-block;
+    color: $white;
+    text-align: center;
+    background: $gray;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: - $tagHeight / 2;
+}

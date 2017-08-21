@@ -93,6 +93,12 @@ module.exports = (function($) {
 		this.sendBoxEle.classList.remove("show");
 		this.codeInputEle.value = "";
 	}
+	// 清除计时
+	checkCode.prototype.clearTimer = function() {
+		clearTimeout(this.timer);
+		this.codeBtnEle.removeAttribute("disabled");
+		this.codeBtnEle.value = "获取验证码";
+	}
 	// 发送验证码
 	checkCode.prototype.getCode = function(el) {
 		this.timeDown(el);
@@ -122,6 +128,7 @@ module.exports = (function($) {
 				success: function(data) {
 					self.options.doneBack();
 					self.close();
+					self.clearTimer();
 				}
 			});
 		} else {
@@ -141,7 +148,7 @@ module.exports = (function($) {
 			o.setAttribute("disabled", true);
 			o.value = "(" + t + "秒)重新获取";
 			t--;
-			setTimeout(function() {
+			self.timer = setTimeout(function() {
 				self.timeDown(o, t);
 			}, 1000);
 		}
