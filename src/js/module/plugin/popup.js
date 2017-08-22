@@ -1,9 +1,8 @@
 /**
  * 弹窗模块
  * created by LittleYellow/441980627@qq.com
- * init()初始化后再调用
  * popupModule.open({
-		templet: '<div style="width:257px;height:170px;background:#FCFCFC;position:fixed;left:50%;top:150px;z-index:1;margin-left:-128.5px;border-radius:12px;"></div>'
+		templet: '<div style="width:257px;height:170px;background:#FCFCFC;position:fixed;left:50%;top:150px;z-index:1;margin-left:-128.5px;border-radius:12px;"><div id="popup-close" style="width:50px;height:50px;background:#f00;"></div></div>'
 	});
  */
 
@@ -11,28 +10,42 @@ module.exports = (function($) {
 
 	var popup = {}; // 弹窗模块
 
+	var bodyEle, maskEle, contentEle;
+
 	// 阻止浏览器默认事件
 	popup.banDefault = function(e) {
 		e.preventDefault();
 	}
 
-	// 弹窗初始化
-	popup.init = function() {
-		var popupMaskTpl = '<div id="popupMask" class="popup-mask popup-hide"></div><div id="popupContent" class="popup-content popup-close popup-hide"></div>';
-		document.querySelector("body").insertAdjacentHTML("beforeEnd", popupMaskTpl);
-
+	// 创建元素
+	popup.create = function() {
+		bodyEle = document.querySelector("body");
+		maskEle = document.createElement("div");
+		contentEle = document.createElement("div");
+		maskEle.classList.add("popup-mask");
+		contentEle.classList.add("popup-content");
+		contentEle.addEventListener("touchstart", function(event) {
+			if(event.target.classList.toString().indexOf("popup-content") >= 0) {
+				popup.close();
+			}
+		});
+		bodyEle.appendChild(maskEle);
+		bodyEle.appendChild(contentEle);
 	}
 
 	// 打开弹窗
 	popup.open = function(params) {
 		var defaults = {
+			closeEleId: "popup-close",
 			templet: "<div></div>"
 		};
 		var options = $.extend(defaults, params);
-		$("#popupMask").removeClass("popup-hide popup-fadeOut").addClass("popup-fadeIn");
-		$("#popupContent").html(options.templet);
-		$("#popupContent").removeClass("popup-hide popup-fadeInDown").addClass("popup-fadeInUp");
-		$(".popup-close").bind("tap", function() {
+		popup.create();
+		contentEle.innerHTML = options.templet;
+		maskEle.classList.add("popup-fadeIn");
+		contentEle.classList.add("popup-fadeInUp");
+		var closeEle = document.getElementById(options.closeEleId);
+		closeEle && closeEle.addEventListener("touchstart", function(event) {
 			popup.close();
 		});
 		document.addEventListener('touchmove', popup.banDefault, false);
@@ -40,12 +53,13 @@ module.exports = (function($) {
 
 	// 关闭弹窗
 	popup.close = function() {
-		$("#popupMask").removeClass("popup-fadeIn").addClass("popup-fadeOut");
-		$("#popupContent").removeClass("popup-fadeInUp").addClass("popup-fadeInDown");
+		maskEle.classList.remove("popup-fadeIn");
+		maskEle.classList.add("popup-fadeOut");
+		contentEle.classList.remove("popup-fadeInUp");
+		contentEle.classList.add("popup-fadeInDown");
 		setTimeout(function() {
-			$("#popupMask").addClass("popup-hide");
-			$("#popupContent").addClass("popup-hide");
-			$("#popupContent").html("");
+			bodyEle.removeChild(maskEle);
+			bodyEle.removeChild(contentEle);
 		}, 100);
 		document.removeEventListener('touchmove', popup.banDefault, false);
 	}

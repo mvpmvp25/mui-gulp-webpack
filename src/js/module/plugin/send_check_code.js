@@ -6,19 +6,19 @@
 module.exports = (function($) {
 
 	function checkCode() {
-		this.defaults = {
-			title: "获取验证码",
-			mobile: "",
-			isInit: true, // true-自动发短信 false-手动发短信
-			doneBack: function() {}
-		};
 		this.status = "00"; // 00-未倒计时 01-正在倒计时
 	}
 
 	// 初始化
 	checkCode.prototype.init = function(params) {
+		var defaults = {
+			title: "获取验证码",
+			mobile: "",
+			isInit: true, // true-自动发短信 false-手动发短信
+			doneBack: function() {}
+		};
 		var self = this;
-		this.options = strModule.extendObj(this.defaults, params);
+		this.options = strModule.extendObj(defaults, params);
 		var pageHtml = '<div class="send-box">' +
 			'<header class="app-header-box">' +
 			'<a class="app-header-back close-btn"></a>' +

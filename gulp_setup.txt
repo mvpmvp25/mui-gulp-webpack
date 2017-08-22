@@ -12,7 +12,7 @@ Ruby、devkit下载 http://rubyinstaller.org/downloads/
 npm install gulp -g
 
 给项目目录安装插件
-npm install del gulp-cached gulp-uglify gulp-rename gulp-concat gulp-notify gulp-filter gulp-ruby-sass gulp-rev-append gulp-cssnano gulp-replace gulp-imagemin gulp-font-spider gulp-file-include gulp-autoprefixer webpack gulp-util fs gulp-ssh
+npm install del gulp-cached gulp-uglify gulp-rename gulp-concat gulp-notify gulp-filter gulp-inline-source gulp-ruby-sass gulp-rev-append gulp-cssnano gulp-replace gulp-imagemin gulp-font-spider gulp-file-include gulp-autoprefixer webpack gulp-util fs gulp-ssh
 npm install jshint gulp-jshint
 
 ***************************** npm常用命令 *********************************

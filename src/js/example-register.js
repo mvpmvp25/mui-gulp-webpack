@@ -11,7 +11,6 @@ require('./module/public');
 		init: function() {
 			this.bindEvent();
 			formModule.inputClear();
-			popupModule.init();
 		},
 
 		// 事件绑定
@@ -27,7 +26,7 @@ require('./module/public');
 
 			$(".btn").bind("tap", function() {
 				popupModule.open({
-					templet: '<div style="width:257px;height:170px;background:#FCFCFC;position:fixed;left:50%;top:150px;z-index:1;margin-left:-128.5px;border-radius:12px;"></div>'
+					templet: '<div style="width:257px;height:170px;background:#FCFCFC;position:fixed;left:50%;top:150px;z-index:1;margin-left:-128.5px;border-radius:12px;"><div id="popup-close" style="width:50px;height:50px;background:#f00;"></div></div>'
 				});
 			});
 
