@@ -5,7 +5,9 @@
 
 module.exports = (function() {
 
-	var banDefault = function(e) { e.preventDefault(); }
+	var banDefault = function(e) {
+		e.preventDefault();
+	}
 	var logicModule = {};
 
 	/**
@@ -38,18 +40,31 @@ module.exports = (function() {
 	/**
 	 * setInterval循环
 	 * loopCall循环执行的方法，controlCall控制循环停止的方法，stopCall循环停止时回调的方法, speed循环速率
+	 * var task = new ...
 	 */
 	logicModule.setIntervalTask = function(loopCall, controlCall, stopCall, speed) {
+		var self = this;
 		speed = speed || 10;
-		var scan = function() {
+		this.scan = function() {
 			loopCall && loopCall();
 			if(controlCall && controlCall()) {
 				stopCall && stopCall();
-				clearInterval(init);
+				clearInterval(self.init);
 			}
 		}
-		var init = setInterval(scan, speed);
+		this.init = setInterval(this.scan, speed);
 	}
+	//	logicModule.setIntervalTask = function(loopCall, controlCall, stopCall, speed) {
+	//		speed = speed || 10;
+	//		var scan = function() {
+	//			loopCall && loopCall();
+	//			if(controlCall && controlCall()) {
+	//				stopCall && stopCall();
+	//				clearInterval(init);
+	//			}
+	//		}
+	//		var init = setInterval(scan, speed);
+	//	}
 
 	return logicModule;
 })();
