@@ -35,10 +35,8 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			zepto: srcDir + "/js/lib/fui-zepto.js",
-			fastclick: srcDir + "/js/lib/fastclick.js",
-			//core: srcDir + "/js/core",
-			//ui: srcDir + "/js/ui"
+			//			zepto: srcDir + "/js/lib/fui-zepto.js",
+			//			fastclick: srcDir + "/js/lib/fastclick.js",
 		}
 	},
 	plugins: [
